@@ -1,0 +1,18 @@
+.root-header {
+  @apply fixed text-[20px] top-0 left-0 w-full transition-transform duration-300 flex justify-between px-10 items-center z-20 text-gray-800;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+}
+
+.root-navlink-link {
+  @apply py-[10px] px-5 z-20 transition-all duration-1000;
+}
+
+.root-navlink-link:hover {
+  @apply text-white border-2 border-white bg-[#ffa500] py-[10px] px-[30px];
+}
+
+/* for header active nav */
+.active-link {
+  @apply py-[10px] px-5 text-white border-2 border-white bg-[#ffa500];
+}
