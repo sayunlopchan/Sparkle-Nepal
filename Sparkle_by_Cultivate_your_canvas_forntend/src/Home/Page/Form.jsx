@@ -79,7 +79,6 @@ const Form = () => {
       enrollmentDate: "",
       startingDate: "",
       reference: "",
-      enrolledBy: "",
     },
     validationSchema: Yup.object({
       // validation schema 
@@ -104,7 +103,6 @@ const Form = () => {
       enrollmentDate: Yup.string().required("*Enrollment Date Required*"),
       startingDate: Yup.string().required("*Starting Date Required*"),
       reference: Yup.string().required("*Reference Required*"),
-      enrolledBy: Yup.string().required("*Enrolled By Name Required*"),
     }),
 
     onSubmit: async (values, { resetForm }) => {
@@ -302,7 +300,7 @@ const Form = () => {
                 id="foodAllergies"
                 name="foodAllergies"
                 placeholder="Specify any known food allergies or enter 'None' if not applicable"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none text-[8px] sm:text-xs md:text-base"
                 {...formik.getFieldProps("foodAllergies")}
               />
               {formik.touched.foodAllergies && formik.errors.foodAllergies ? (
@@ -327,7 +325,7 @@ const Form = () => {
                 id="healthIssues"
                 name="healthIssues"
                 placeholder="Specify any known health issues or enter 'None' if not applicable"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none text-[8px] sm:text-xs md:text-base"
                 {...formik.getFieldProps("healthIssues")}
               />
               {formik.touched.healthIssues && formik.errors.healthIssues ? (
@@ -710,7 +708,7 @@ const Form = () => {
               ) : null}
             </div>
 
-            {/* referenes */}
+            {/* references */}
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -723,7 +721,8 @@ const Form = () => {
                 type="text"
                 id="references"
                 name="references"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
+                placeholder="How did you hear about us? (e.g., Friend, News Article, Employee Referral)"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none text-[8px] sm:text-xs md:text-base"
                 {...formik.getFieldProps("reference")}
               />
               {formik.touched.reference && formik.errors.reference ? (
@@ -733,28 +732,6 @@ const Form = () => {
               ) : null}
             </div>
 
-            {/* enrolled by */}
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="enrolledBy"
-              >
-                Enrolled by
-                <span className="text-red-500 text-sm mt-1">*</span>
-              </label>
-              <input
-                type="text"
-                id="enrolledBy" // Match this with the key
-                name="enrolledBy" // Match this with the key
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
-                {...formik.getFieldProps("enrolledBy")}
-              />
-              {formik.touched.enrolledBy && formik.errors.enrolledBy ? (
-                <div className="text-red-500 text-sm mt-1">
-                  {formik.errors.enrolledBy}
-                </div>
-              ) : null}
-            </div>
 
           </div>
           {/* Membership Details Section-END */}

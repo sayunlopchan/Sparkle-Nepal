@@ -7,9 +7,6 @@ import { FaWhatsapp } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
 
-// emailjs api
-import emailjs from 'emailjs-com';
-
 // npms
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -186,9 +183,10 @@ const Contact = () => {
               <div>
                 <button
                   type="submit"
-                  className="w-full px-4 py-2 bg-blue-600 text-white font-bold rounded-md shadow-md hover:bg-blue-700"
+                  disabled={formik.isSubmitting}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring"
                 >
-                  Send Message
+                  {formik.isSubmitting ? 'Sending...' : 'Send message'}
                 </button>
               </div>
             </form>
