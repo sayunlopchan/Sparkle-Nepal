@@ -18,14 +18,13 @@ const createAdmissionEmailTemplate = (
   enrollmentDate,
   startingDate,
   reference,
-  enrolledBy,
   email
 ) => {
   return `
       <div style="font-family:monospace;">
       
 <div style="background-color:white; padding:5px 0px;">
-<h2 style="background: linear-gradient(to right,yellow, orangered); color:white; text-align:center; font-size:24px; padding:5px;">
+<h2 style="background: linear-gradient(to right,orangered,orange); color:white; text-align:center; font-size:24px; padding:5px;">
 Hello, Sprakle
 </h2>
 </div>
@@ -36,6 +35,7 @@ Hello, Sprakle
 <span style="border-bottom:1px solid black;"># Recived from: ${email}
 </span>
 
+<div style="margin-bottom: 5px; width: 100%; background: linear-gradient(to right,orangered,orange); color:white; padding:5px;">
 
 
     <h3 style="margin-top:30px; color:inherit;">Student Details:</h3>
@@ -129,9 +129,8 @@ Hello, Sprakle
 
     <div style="font-size:12px; color:inherit;">
       <p>Reference: ${reference}</p>
-      <p>Enrolled By: ${enrolledBy}</p>
     </div>
-
+</div>
 <div>
 <div style="margin-top: 50px; border-top: 4px solid transparent; border-image: linear-gradient(to right,orangered, yellow) 1;">
   <p>This Message is sent from:</p>

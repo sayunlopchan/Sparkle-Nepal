@@ -51,7 +51,6 @@ app.post("/send-email", (req, res) => {
     enrollmentDate,
     startingDate,
     reference,
-    enrolledBy,
     email
   } = req.body.values;
 
@@ -75,7 +74,6 @@ app.post("/send-email", (req, res) => {
     enrollmentDate,
     startingDate,
     reference,
-    enrolledBy,
     email
   );
 
@@ -128,7 +126,6 @@ app.post("/send-message", (req, res) => {
     res.status(200).send("Message sent: " + info.response);
   });
 });
-
 
 
 
