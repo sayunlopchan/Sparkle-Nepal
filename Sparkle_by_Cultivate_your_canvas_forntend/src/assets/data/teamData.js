@@ -4,11 +4,12 @@ import teamImg1 from "../image/vector/60111.webp";
 // team member
 import teamMember1 from "../image/people/Team/Shreya Maharjan.jpg";
 import teamMember2 from "../image/people/Team/SanjeevaniSedain .jpg";
-import teamMember3 from "../image/people/Team/RosyShrestha.jpg";
-import teamMember4 from "../image/people/Team/susmita Rai .jpg";
-import teamMember5 from "../image/people/Team/LujalaShakya.jpg";
-import teamMember6 from "../image/people/Team/kokilaTamang.jpg";
-import teamMember7 from "../image/people/Team/MilanKhadka.jpg";
+import teamMember3 from "../image/people/Team/susmita Rai .jpg";
+import teamMember4 from "../image/people/Team/LujalaShakya.jpg";
+// import teamMember5 from "../image/people/Team/kokilaTamang.jpg";
+import teamMember6 from "../image/people/Team/MilanKhadka.jpg";
+import teamMember7 from "../image/people/Team/HarikrishnaShrestha.jpg";
+import teamMember8 from "../image/people/Team/SagarSubedi.jpg";
 
 const teamData = [
   {
@@ -26,32 +27,44 @@ const teamData = [
   {
     id: 3,
     image: teamMember3,
-    fullName: "Rosy Shrestha",
-    position: "Dance Instructor",
-  },
-  {
-    id: 4,
-    image: teamMember4,
     fullName: "Susmita Rai",
     position: "Yoga Instructor",
   },
   {
-    id: 5,
-    image: teamMember5,
+    id: 4,
+    image: teamMember4,
     fullName: "Lujala Shakya",
     position: "Art Teacher",
   },
+  // {
+  //   id: 5,
+  //   image: teamImg1,
+  //   fullName: "Post Open",
+  //   position: "Accountant",
+  // },
   {
     id: 6,
     image: teamMember6,
-    fullName: "Konika Tamang",
-    position: "Accountant",
+    fullName: "Milan Khadka",
+    position: "Dance Teacher",
   },
   {
     id: 7,
     image: teamMember7,
-    fullName: "Milan Khadka",
-    position: "Dance Teacher",
+    fullName: "Hari Krishna Shrestha",
+    position: "Chess Master",
+  },
+  {
+    id: 8,
+    image: teamMember8,
+    fullName: "Sagar Subedi",
+    position: "Dining Etiquette",
+  },
+  {
+    id: 9,
+    image: teamImg1,
+    fullName: "Dr. Aarzu Thapa",
+    position: "Oral Health",
   },
 ];
 

@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 
 // img
 import group from '../../assets/image/useables/group.webp'
@@ -79,6 +78,8 @@ const About = () => {
           <div className='space-y-5'>
             <span className='text-red-500 text-sm font-semibold'>Meet the Team</span>
             <h2 className='text-lg lg:text-4xl font-semibold'>Meet Our Dedicated Team of <br /> Educators and Innovators</h2>
+            <p className='text-xs'><span className='text-red-500 text-xs'>*</span>Hover over or click the image<span className='text-red-500 text-xs'>*</span></p>
+
           </div>
 
           {/* Team Section */}

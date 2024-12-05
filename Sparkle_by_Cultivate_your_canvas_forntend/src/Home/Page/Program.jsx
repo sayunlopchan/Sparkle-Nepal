@@ -12,6 +12,8 @@ import dance from "../../assets/image/program/dance/dance.webp";
 import personallityDevelopment from "../../assets/image/program/art/kid2.webp";
 import chess from "../../assets/image/useables/chess.jpg";
 import diningEtiquette from "../../assets/image/useables/dining_etiquette.jpg";
+import oralHealth from "../../assets/image/useables/kids-oral-health.jpg";
+import music from "../../assets/image/useables/music-class.png";
 
 // icons
 import prop1 from "../../assets/icons/arts.svg";
@@ -21,6 +23,8 @@ import prop4 from "../../assets/icons/dance-.svg";
 import prop5 from "../../assets/texture/useableImages/mindful.webp";
 import prop6 from "../../assets/icons/chess.png";
 import prop7 from "../../assets/icons/table-etiquette.png";
+import prop8 from "../../assets/icons/oral.jpg";
+import prop9 from "../../assets/icons/music.png";
 
 import AnimatedComponent2 from "../../components/Animation/AnimatedComponent2";
 import AnimatedComponent from "../../components/Animation/AnimatedComponent";
@@ -71,8 +75,11 @@ const Program = () => {
       title: "Chess",
       para: `At <strong>Sparkle Kids Academy</strong>, our chess classes offer children a stimulating environment to enhance their strategic thinking and problem-solving skills. Chess is a fantastic tool for developing critical thinking, as it encourages students to plan ahead, make strategic decisions, and anticipate their opponent's moves. Through our chess program, students will improve their concentration, memory, and logical reasoning abilities.
                 <br />
-                Chess fosters patience and perseverance, teaching children to approach challenges methodically and stay focused on their goals. Engaging in chess not only sharpens a child's cognitive abilities but also enhances their ability to work through complex problems, making it a valuable addition to their educational journey.`,
-    },
+                Chess fosters patience and perseverance, teaching children to approach challenges methodically and stay focused on their goals. Engaging in chess not only sharpens a child's cognitive abilities but also enhances their ability to work through complex problems, making it a valuable addition to their educational journey.
+                <br />
+                This program is led by <strong>Hari Krishna Shrestha</strong>, who brings expert knowledge and a passion for teaching critical thinking and strategy to young learners.`
+    }
+    ,
 
     {
       image: diningEtiquette,
@@ -80,8 +87,32 @@ const Program = () => {
       title: "Dining Etiquette",
       para: `At <strong>Sparkle Kids Academy</strong>, our dining etiquette classes provide children with essential skills for formal dining and social interactions. Proper dining etiquette is crucial for fostering respect, manners, and confidence in social settings. Through our dining etiquette program, students will learn the art of table manners, including how to properly use utensils, engage in polite conversation, and demonstrate respect for others at the table.
                 <br />
-                <i>Dining etiquette</i> helps children develop a sense of decorum and self-assuredness in various social contexts. Students will practice and master the nuances of dining etiquette, from basic table settings to sophisticated social interactions. This program not only prepares children for formal events but also instills a lifelong appreciation for social grace and etiquette, contributing significantly to their personal and social development.`,
+                <i>Dining etiquette</i> helps children develop a sense of decorum and self-assuredness in various social contexts. Students will practice and master the nuances of dining etiquette, from basic table settings to sophisticated social interactions. This program not only prepares children for formal events but also instills a lifelong appreciation for social grace and etiquette, contributing significantly to their personal and social development.
+                <br />
+                This program is led by <strong>Sagar Subedi</strong>, who brings expert knowledge and a passion for teaching social skills to young learners.`
     },
+    {
+      image: oralHealth,
+      icon: prop8,
+      title: "Oral Health",
+      para: `At <strong>Sparkle Kids Academy</strong>, our oral health classes provide children with essential knowledge to maintain good oral hygiene and develop healthy habits. Oral health is crucial for overall well-being, and our program aims to teach children the importance of brushing, flossing, and regular dental check-ups. Students will learn the proper techniques for maintaining a clean and healthy mouth, as well as the impact of diet on dental health.
+                <br />
+                Good oral hygiene helps prevent cavities, gum disease, and other dental issues. Through interactive lessons, children will understand the significance of taking care of their teeth, gums, and overall oral health. This program not only promotes a healthier lifestyle but also instills confidence in children by encouraging them to smile brightly and take pride in their dental care.
+                <br />
+                This program is led by <strong>Dr. Aarzu Thapa</strong>, a dedicated professional with a passion for educating young learners about the importance of oral health and hygiene.`
+    },
+    {
+      image: music,
+      icon: prop9,
+      title: "Music Class",
+      para: `At <strong>Sparkle Kids Academy</strong>, our music classes are designed to foster creativity and a love for music in children. Through fun and interactive sessions, students will explore the basics of music, rhythm, and melody while learning to play simple instruments and develop vocal skills. 
+                  <br />
+                  Music is not only a source of joy but also enhances cognitive development, coordination, and emotional expression. Our program encourages children to embrace different musical styles, improve their listening skills, and express themselves creatively. Students will have the opportunity to participate in group performances, helping them build confidence and teamwork skills.
+                  <br />
+                  The music program is led by a talented and passionate instructor who believes in making music education enjoyable, helping each child discover their unique musical potential.`
+    }
+
+
   ];
 
   return (
@@ -135,6 +166,10 @@ const Program = () => {
             {index === 2 && <Booking />}
           </React.Fragment>
         ))}
+
+        <p className="px-2 text-xs text-gray-600 italic">
+          Disclaimer: Some images displayed on this page are sourced from the internet and are not owned by us.
+        </p>
       </div>
     </div>
   );
