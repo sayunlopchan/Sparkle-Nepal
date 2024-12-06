@@ -6,10 +6,11 @@ import teamMember1 from "../image/people/Team/Shreya Maharjan.jpg";
 import teamMember2 from "../image/people/Team/SanjeevaniSedain .jpg";
 import teamMember3 from "../image/people/Team/susmita Rai .jpg";
 import teamMember4 from "../image/people/Team/LujalaShakya.jpg";
-// import teamMember5 from "../image/people/Team/kokilaTamang.jpg";
+import teamMember5 from "../image/people/Team/SarbadaThapaMagar.jpg";
 import teamMember6 from "../image/people/Team/MilanKhadka.jpg";
 import teamMember7 from "../image/people/Team/HarikrishnaShrestha.jpg";
 import teamMember8 from "../image/people/Team/SagarSubedi.jpg";
+import teamMember9 from "../image/people/Team/DrAarzuThapa.jpg";
 
 const teamData = [
   {
@@ -36,12 +37,18 @@ const teamData = [
     fullName: "Lujala Shakya",
     position: "Art Teacher",
   },
-  // {
-  //   id: 5,
-  //   image: teamImg1,
-  //   fullName: "Post Open",
-  //   position: "Accountant",
-  // },
+  {
+    id: 5,
+    image: teamMember5,
+    fullName: "Sarbada Thapa Magar",
+    position: "Activity teacher",
+  },
+  {
+    id: 9,
+    image: teamMember9,
+    fullName: "Dr. Aarzu Thapa",
+    position: "Oral Health",
+  },
   {
     id: 6,
     image: teamMember6,
@@ -60,12 +67,7 @@ const teamData = [
     fullName: "Sagar Subedi",
     position: "Dining Etiquette",
   },
-  {
-    id: 9,
-    image: teamImg1,
-    fullName: "Dr. Aarzu Thapa",
-    position: "Oral Health",
-  },
+
 ];
 
 export default teamData;

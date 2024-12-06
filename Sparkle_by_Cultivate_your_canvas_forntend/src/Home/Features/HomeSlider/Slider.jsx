@@ -25,7 +25,7 @@ const SliderData = [
   {
     img: img2,
     title: "Dance",
-    author: "Rosy Shrestha",
+    author: "Milan Khadka",
     description:
       "Children can develop coordination, balance, and flexibility while fostering creativity and self-expression through dance classes. These classes build confidence and a love for the art with structured, engaging instruction.",
     color: 'text-blue-500'
