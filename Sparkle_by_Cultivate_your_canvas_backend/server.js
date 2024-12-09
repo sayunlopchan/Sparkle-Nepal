@@ -18,6 +18,13 @@ app.use(cors());
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+
+
+// Check if the required environment variables are present
+if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+  throw new Error("Missing environment variables: EMAIL_USER or EMAIL_PASS");
+}
+
 // Created a transporter to send emails using Gmail
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -33,48 +40,60 @@ const transporter = nodemailer.createTransport({
 app.post("/send-email", (req, res) => {
   console.log("Received form data:", req.body);
   const {
+    // Student
     studentName,
-    studentAge,
     studentDob,
+    studentAge,
     studentGender,
     studentAddress,
+    foodAllergies,
+    healthIssues,
+    // Guardian
     guardianName,
-    guardianAge,
     guardianDob,
+    guardianAge,
     guardianGender,
     guardianAddress,
+    maritalStatus,
+    email,
     number,
     emergencyNumber,
     nationality,
-    maritalStatus,
+    // Courses
     course,
     enrollmentDate,
     startingDate,
     reference,
-    email
+
   } = req.body.values;
 
   // Create email body with the custom template
   const emailHtml = createAdmissionEmailTemplate(
+    // Student
     studentName,
-    studentAge,
     studentDob,
+    studentAge,
     studentGender,
     studentAddress,
+    foodAllergies,
+    healthIssues,
+    // Guardian
     guardianName,
-    guardianAge,
     guardianDob,
+    guardianAge,
     guardianGender,
     guardianAddress,
+    maritalStatus,
+    email,
     number,
     emergencyNumber,
     nationality,
-    maritalStatus,
+    // Courses
     course,
     enrollmentDate,
     startingDate,
     reference,
-    email
+
   );
 
   const mailOptions = {
@@ -96,6 +115,7 @@ app.post("/send-email", (req, res) => {
 
 // POST endpoint to handle conatact message submission
 app.post("/send-message", (req, res) => {
+  console.log("Received contact data:", req.body);
   const {
     email,
     subject,
