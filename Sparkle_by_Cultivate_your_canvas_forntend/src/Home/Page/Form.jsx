@@ -76,8 +76,6 @@ const Form = () => {
       nationality: "",
       // Courses
       course: "",
-      enrollmentDate: "",
-      startingDate: "",
       reference: "",
     },
     validationSchema: Yup.object({
@@ -100,8 +98,6 @@ const Form = () => {
       maritalStatus: Yup.string().required("*Guardian Marital Status Required*"),
       nationality: Yup.string().required("*Guardian Nationality Required*"),
       course: Yup.string().required("*Course Enrollment Duration Required*"),
-      enrollmentDate: Yup.string().required("*Enrollment Date Required*"),
-      startingDate: Yup.string().required("*Starting Date Required*"),
       reference: Yup.string().required("*Reference Required*"),
     }),
 
@@ -662,51 +658,7 @@ const Form = () => {
               ) : null}
             </div>
 
-            {/* enrollment date */}
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="enrollmentDate"
-              >
-                Enrollment Date
-                <span className="text-red-500 text-sm mt-1">*</span>
-              </label>
-              <input
-                type="date"
-                id="enrollmentDate"
-                name="enrollmentDate"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
-                {...formik.getFieldProps("enrollmentDate")}
-              />
-              {formik.touched.enrollmentDate && formik.errors.enrollmentDate ? (
-                <div className="text-red-500 text-sm mt-1">
-                  {formik.errors.enrollmentDate}
-                </div>
-              ) : null}
-            </div>
 
-            {/* starting date */}
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="startingDate"
-              >
-                Starting Date
-                <span className="text-red-500 text-sm mt-1">*</span>
-              </label>
-              <input
-                type="date"
-                id="startingDate"
-                name="startingDate"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none"
-                {...formik.getFieldProps("startingDate")}
-              />
-              {formik.touched.startingDate && formik.errors.startingDate ? (
-                <div className="text-red-500 text-sm mt-1">
-                  {formik.errors.startingDate}
-                </div>
-              ) : null}
-            </div>
 
             {/* references */}
             <div className="mb-4">
