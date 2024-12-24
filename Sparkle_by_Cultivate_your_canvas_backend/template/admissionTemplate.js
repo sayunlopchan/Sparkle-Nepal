@@ -21,8 +21,6 @@ const createAdmissionEmailTemplate = (
   nationality,
   // Courses
   course,
-  enrollmentDate,
-  startingDate,
   reference,
 
 ) => {
@@ -297,14 +295,6 @@ const createAdmissionEmailTemplate = (
                 <tr>
                     <th>Course Enrollment</th>
                     <td>${course}</td>
-                </tr>
-                <tr>
-                    <th>Enrollment Date</th>
-                    <td>${enrollmentDate}</td>
-                </tr>
-                <tr>
-                    <th>Starting Date</th>
-                    <td>${startingDate}</td>
                 </tr>
             </table>
 
