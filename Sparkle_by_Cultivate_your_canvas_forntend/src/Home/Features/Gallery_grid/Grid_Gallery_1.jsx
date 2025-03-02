@@ -18,12 +18,18 @@ import splashYelow from "../../../assets/texture/splash/modern-yellow-orange-wat
 import splashOrange from "../../../assets/texture/splash/abstract-orange-watercolor.png";
 import splashPink from "../../../assets/texture/splash/abstract-pink-watercolor.png";
 
+// crusor
+
+import cursor from "../../../assets/icons/cursor.png";
+
+
 // styles css
 import "./gallery.css";
 
 // animation
 import AnimatedComponent from "../../../components/Animation/AnimatedComponent";
 import AnimatedComponent2 from "../../../components/Animation/AnimatedComponent2";
+import { NavLink } from "react-router-dom";
 
 // animation
 
@@ -117,6 +123,12 @@ const GridGallery_1 = () => {
                 <li>
                   <img src={splashOrange} alt='splash red' className="splash-img" />
                   Public Speaking
+                </li>
+              </AnimatedComponent2>
+              <AnimatedComponent2>
+                <li className="text-center mt-3 ml-3">
+                  <img src={cursor} alt='splash red' className="cursor w-5 rotate-90" />
+                  <NavLink to={'/program'} className={'hover:text-orange-500 underline underline-offset-4'}>See more</NavLink>
                 </li>
               </AnimatedComponent2>
             </ul>

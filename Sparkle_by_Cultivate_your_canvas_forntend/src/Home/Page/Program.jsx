@@ -14,6 +14,12 @@ import chess from "../../assets/image/useables/chess.jpg";
 import diningEtiquette from "../../assets/image/useables/dining_etiquette.jpg";
 import oralHealth from "../../assets/image/useables/kids-oral-health.jpg";
 import music from "../../assets/image/useables/music-class.png";
+import summer_camp from "../../assets/image/useables/summer_camp.jpg";
+import Weekend_Camp from "../../assets/image/useables/Weekend_Camp.jpg";
+import Session_Break_Camp from "../../assets/image/useables/Session_Break_Camp.jpg";
+import Winter_Camp from "../../assets/image/useables/Winter_Camp.jpg";
+import After_School_Program from "../../assets/image/useables/After_School_Program.jpg";
+import festival_camp from "../../assets/image/useables/festival.jpg";
 
 // icons
 import prop1 from "../../assets/icons/arts.svg";
@@ -25,6 +31,12 @@ import prop6 from "../../assets/icons/chess.png";
 import prop7 from "../../assets/icons/table-etiquette.png";
 import prop8 from "../../assets/icons/oral.jpg";
 import prop9 from "../../assets/icons/music.png";
+import prop10 from "../../assets/icons/school.png";
+import prop11 from "../../assets/icons/winter_camp.png";
+import prop12 from "../../assets/icons/session.png";
+import prop13 from "../../assets/icons/Vacation.png";
+import prop14 from "../../assets/icons/summer.png";
+import prop15 from "../../assets/icons/camp.png";
 
 import AnimatedComponent2 from "../../components/Animation/AnimatedComponent2";
 import AnimatedComponent from "../../components/Animation/AnimatedComponent";
@@ -37,7 +49,7 @@ const Program = () => {
       image: arts,
       icon: prop1,
       title: "Arts",
-      para: `At <strong>Sparkle Kids Academy</strong>, our art classes, led by the talented young artist <strong>Lujala Shakya</strong>, offer children a unique opportunity to explore their creativity and imagination. Art plays a vital role in a child's development, helping them to express their thoughts and emotions in a visual and tangible way. Through our art program, students will develop fine motor skills, enhance their problem-solving abilities, and improve their visual-spatial understanding.
+      para: `At <strong>Sparkle Kids Academy</strong>, our art classes, led by the talented young artist, offer children a unique opportunity to explore their creativity and imagination. Art plays a vital role in a child's development, helping them to express their thoughts and emotions in a visual and tangible way. Through our art program, students will develop fine motor skills, enhance their problem-solving abilities, and improve their visual-spatial understanding.
             <br />
             Art encourages children to think critically, make decisions, and explore different perspectives. It fosters creativity and innovation, allowing kids to experiment with colors, shapes, and techniques, leading to a deeper understanding of the world around them. Under Lujala Shakya's guidance, students are inspired to create and express themselves freely, building confidence and self-esteem. Engaging in art not only nurtures a child's artistic talents but also contributes to their overall cognitive and emotional development, making it an essential part of a well-rounded education.`,
     },
@@ -45,7 +57,7 @@ const Program = () => {
       image: yoga,
       icon: prop2,
       title: "Yoga",
-      para: `At <strong>Sparkle Kids Academy</strong>, our yoga program, led by the experienced  <strong>Ira Sushmita Chamling Rai</strong>, is designed to provide children with a holistic approach to physical and mental well-being. Yoga offers a myriad of benefits for young learners, fostering not only physical strength and flexibility but also mental clarity and emotional balance. Through carefully structured sessions, Ira guides students in practicing various yoga poses, breathing exercises, and mindfulness techniques that are tailored to their developmental needs.
+      para: `At <strong>Sparkle Kids Academy</strong>, our yoga program, led by the experienced, is designed to provide children with a holistic approach to physical and mental well-being. Yoga offers a myriad of benefits for young learners, fostering not only physical strength and flexibility but also mental clarity and emotional balance. Through carefully structured sessions, Ira guides students in practicing various yoga poses, breathing exercises, and mindfulness techniques that are tailored to their developmental needs.
             <br />
             Children engaged in our yoga program will experience improved focus, enhanced concentration, and better stress management. The practice of yoga helps in developing body awareness, promoting healthy posture, and increasing overall physical coordination. Additionally, yoga encourages self-discipline and cultivates a sense of inner calm, empowering children to navigate life's challenges with resilience and confidence. Under Ira Sushmita Chamling Rai's expert instruction, our students are nurtured in a supportive environment where they can grow both physically and emotionally, laying a strong foundation for lifelong health and well-being.`,
     },
@@ -59,7 +71,7 @@ const Program = () => {
       image: dance,
       icon: prop4,
       title: "Dance",
-      para: `At <strong>Sparkle Kids Academy</strong>, our dance program, led by esteemed instructor <strong >Rosy Shrestha</a></strong>, offers children an exceptional opportunity to explore the art of dance. This program is designed to foster both physical and cognitive development in a structured yet creative environment. Through our curriculum, students will enhance their coordination, balance, and flexibility, while also cultivating discipline and focus. Dance encourages self-expression and creativity, providing children with the tools to build confidence and resilience. Under Rosy Shrestha's expert guidance, our program not only teaches the technical aspects of dance but also instills a deep appreciation for the art form, preparing students for future success both on and off the stage.`,
+      para: `At <strong>Sparkle Kids Academy</strong>, our dance program, led by esteemed instructor, offers children an exceptional opportunity to explore the art of dance. This program is designed to foster both physical and cognitive development in a structured yet creative environment. Through our curriculum, students will enhance their coordination, balance, and flexibility, while also cultivating discipline and focus. Dance encourages self-expression and creativity, providing children with the tools to build confidence and resilience. Under Rosy Shrestha's expert guidance, our program not only teaches the technical aspects of dance but also instills a deep appreciation for the art form, preparing students for future success both on and off the stage.`,
     },
     {
       image: personallityDevelopment,
@@ -78,9 +90,7 @@ const Program = () => {
                 Chess fosters patience and perseverance, teaching children to approach challenges methodically and stay focused on their goals. Engaging in chess not only sharpens a child's cognitive abilities but also enhances their ability to work through complex problems, making it a valuable addition to their educational journey.
                 <br />
                 This program is led by <strong>Hari Krishna Shrestha</strong>, who brings expert knowledge and a passion for teaching critical thinking and strategy to young learners.`
-    }
-    ,
-
+    },
     {
       image: diningEtiquette,
       icon: prop7,
@@ -104,15 +114,73 @@ const Program = () => {
     {
       image: music,
       icon: prop9,
-      title: "Music Class",
+      title: "Music Class (Guitar, Keyboard)",
       para: `At <strong>Sparkle Kids Academy</strong>, our music classes are designed to foster creativity and a love for music in children. Through fun and interactive sessions, students will explore the basics of music, rhythm, and melody while learning to play simple instruments and develop vocal skills. 
                   <br />
                   Music is not only a source of joy but also enhances cognitive development, coordination, and emotional expression. Our program encourages children to embrace different musical styles, improve their listening skills, and express themselves creatively. Students will have the opportunity to participate in group performances, helping them build confidence and teamwork skills.
                   <br />
                   The music program is led by a talented and passionate instructor who believes in making music education enjoyable, helping each child discover their unique musical potential.`
-    }
-
-
+    },
+    {
+      image: After_School_Program,
+      icon: prop10,
+      title: "After School Program",
+      para: `At <strong>Sparkle Kids Academy</strong>, our After School Program offers a safe, fun, and enriching environment for children once the school day ends. We provide a variety of activities designed to support learning, creativity, and social development. 
+              <br />
+              From homework assistance and educational games to arts, crafts, and recreational activities, our program keeps students engaged and productive. We aim to help children build valuable life skills, explore new interests, and make lasting friendships in a supportive setting.
+              <br />
+              Led by caring and experienced staff, our After School Program ensures that every child enjoys a balanced mix of study time and playtime, fostering confidence, teamwork, and a love for learning beyond the classroom.`
+    },
+    {
+      image: Winter_Camp,
+      icon: prop11,
+      title: "Winter Camp",
+      para: `At <strong>Sparkle Kids Academy</strong>, our Winter Camp offers an engaging and enriching experience for children during the winter season. We provide a variety of activities designed to support learning, creativity, and personal development.
+              <br />
+              Our camp includes sessions on Yoga, Oral Health, Dining Etiquette, Public Speaking, and more, ensuring that children stay active and continue learning in a fun environment. We aim to help children build valuable life skills, explore new interests, and make lasting friendships in a supportive setting.
+              <br />
+              Led by caring and experienced staff, our Winter Camp ensures that every child enjoys a balanced mix of educational and recreational activities, fostering confidence, teamwork, and a love for learning beyond the classroom.`
+    },
+    {
+      image: Session_Break_Camp,
+      icon: prop12,
+      title: "Session Break Camp",
+      para: `At <strong>Sparkle Kids Academy</strong>, our Session Break Camp provides children with an exciting and productive way to spend their school breaks. We offer a diverse range of activities designed to promote learning, creativity, and personal growth.
+              <br />
+              Our camp includes engaging sessions on Art, Dance, Public Speaking, and various games, ensuring that children remain active and continue learning in an enjoyable environment. We aim to help children develop essential life skills, discover new passions, and form lasting friendships in a supportive setting.
+              <br />
+              Led by our dedicated and experienced team, the Session Break Camp ensures that every child experiences a harmonious blend of educational and recreational activities, fostering self-confidence, teamwork, and a lifelong love for learning beyond the traditional classroom.`
+    },
+    {
+      image: festival_camp,
+      icon: prop13,
+      title: "Dashain and Tihar Vacation Camp",
+      para: `At <strong>Sparkle Kids Academy</strong>, our Dashain and Tihar Vacation Camp offers children a unique opportunity to celebrate these auspicious festivals with a blend of cultural immersion and engaging activities. We provide a variety of programs designed to foster learning, creativity, and community spirit during the festive season.
+              <br />
+              Our camp features a range of activities, including arts and crafts, kite making and flying, traditional games, music, dance, and excursions to local cultural sites. These activities aim to help children understand the cultural significance of Dashain and Tihar while developing valuable skills and forming lasting friendships.
+              <br />
+              Led by our dedicated and experienced staff, the Dashain and Tihar Vacation Camp ensures that every child enjoys a balanced mix of educational and recreational activities, fostering cultural awareness, creativity, and a sense of community during these special times of the year.`
+    },
+    {
+      image: summer_camp,
+      icon: prop14,
+      title: "Summer Camp",
+      para: `At <strong>Sparkle Kids Academy</strong>, our Summer Camp offers an exciting and fun-filled way for children to make the most of their school vacation. We provide a wide variety of activities designed to keep children engaged, active, and learning throughout the summer.
+              <br />
+              From outdoor adventures and sports to arts, crafts, and music, our camp offers a balanced mix of recreational and educational experiences. We aim to help children explore new hobbies, build valuable life skills, and make lifelong memories with friends.
+              <br />
+              Led by our enthusiastic and experienced staff, the Summer Camp ensures that every child enjoys a healthy blend of physical activity, creative expression, and personal development in a safe and supportive environment.`
+    },
+    {
+      image: Weekend_Camp,
+      icon: prop15,
+      title: "Weekend Camp",
+      para: `At <strong>Sparkle Kids Academy</strong>, our Weekend Camp offers children a fantastic way to make the most of their weekends with fun and enriching activities. We provide a variety of programs designed to support learning, creativity, and social development.
+              <br />
+              Our Weekend Camp includes exciting activities such as arts, crafts, music, games, and team-building exercises, ensuring children stay active and engaged during their time off from school. We aim to help children build valuable skills, explore new interests, and foster lasting friendships in a positive and supportive environment.
+              <br />
+              Led by our dedicated and experienced staff, the Weekend Camp guarantees that every child enjoys a perfect mix of education and fun, fostering confidence, teamwork, and a love for learning beyond the classroom.`
+    },
   ];
 
   return (

@@ -2,11 +2,12 @@
 // img
 import group from '../../assets/image/useables/group.webp'
 // team Data
-import teamData from '../../assets/data/teamData';
+// import teamData from '../../assets/data/teamData';
 
 
 import StaticHeader from '../../components/StaticHeader/StaticHeader';
 import Useable from '../../components/Useable/Useable';
+import ChairWomenMessage from '../Features/introduction/ChairWomenMessage';
 
 const About = () => {
 
@@ -76,32 +77,11 @@ const About = () => {
         {/*Team Heading */}
         <div className='p-10 space-y-5'>
           <div className='space-y-5'>
-            <span className='text-red-500 text-sm font-semibold'>Meet the Team</span>
-            <h2 className='text-lg lg:text-4xl font-semibold'>Meet Our Dedicated Team of <br /> Educators and Innovators</h2>
-            <p className='text-xs'><span className='text-red-500 text-xs'>*</span>Hover over or click the image<span className='text-red-500 text-xs'>*</span></p>
+            <ChairWomenMessage />
 
           </div>
 
-          {/* Team Section */}
-          <div className='flex flex-wrap gap-5 justify-center items-center'>
-            {teamData.map(member => (
-              <div key={member.id} className='w-[180px] md:w-[200px] h-[195px] md:h-[240px] rounded-lg overflow-hidden shadow-lg relative group'>
 
-                <div className='absolute h-full w-full bg-gradient-to-t from-black  opacity-0 group-hover:opacity-100 to-transparent transition-all duration-500'></div>
-
-                <img src={member.image} alt={`Team member ${member.id}`} className='h-full w-full object-cover object-center' />
-
-                {/* Hover Information */}
-                <div className='text-white p-2 group-hover:cursor-pointer'>
-
-                  <p className='absolute bottom-[10px] opacity-0 group-hover:opacity-100 group-hover:bottom-[26px] text-lg transition-all duration-300 group-hover:delay-100'>{member.fullName}</p>
-
-                  <p className='absolute bottom-[-5px] opacity-0 group-hover:opacity-100 group-hover:bottom-[8px] text-sm transition-all group-hover:delay-200 duration-300'>{member.position}</p>
-                </div>
-              </div>
-
-            ))}
-          </div>
         </div>
         {/* ambition*/}
         <div className='flex max-lg:flex-wrap justify-between rounded-lg overflow-hidden gap-5 p-10 bg-white'>

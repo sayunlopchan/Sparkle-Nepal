@@ -36,7 +36,7 @@ const ChairWomenMessage = () => {
             {/* heading */}
             <AnimatedComponent>
               <h2 className="font-bold text-4xl text-gray-800">
-                Chairwomen's message
+                CEO message
               </h2>
             </AnimatedComponent>
             <AnimatedComponent>
