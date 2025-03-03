@@ -39,7 +39,7 @@ const About = () => {
             </div>
             <div >
               <p className='text-sm text-gray-700'>
-                <span className='italic text-gray-900'>Sparkle Kids Academy</span>, founded by <strong>Sneha Raut Thapa</strong>, is dedicated to grooming children for the future by offering a wide range of training programs. Inspired by her love for children and the desire to provide what her generation missed, Sneha created Sparkle to help kids develop essential life skills and confidence. Through courses in public speaking, dance, art, and personal grooming, Sparkle Kids Academy is committed to empowering the next generation with the resources they need to succeed.
+                <span className='italic text-gray-900'>Sparkle Kids Academy</span>, founded by <strong>Sneha Raut Thapa</strong>, is dedicated to grooming children for the future by offering a wide range of training programs. Inspired by her love for children and the desire to provide what her generation missed, Sneha created Sparkle to help kids develop essential life skills and confidence. Through courses in public speaking, dance, art, and personal grooming, Sparkle Kids Academy is committed to empowering the next generation with the resources they need to succeed.
 
               </p>
             </div>

@@ -89,7 +89,7 @@ const Program = () => {
                 <br />
                 Chess fosters patience and perseverance, teaching children to approach challenges methodically and stay focused on their goals. Engaging in chess not only sharpens a child's cognitive abilities but also enhances their ability to work through complex problems, making it a valuable addition to their educational journey.
                 <br />
-                This program is led by <strong>Hari Krishna Shrestha</strong>, who brings expert knowledge and a passion for teaching critical thinking and strategy to young learners.`
+                This program brings expert knowledge and a passion for teaching critical thinking and strategy to young learners.`
     },
     {
       image: diningEtiquette,
@@ -99,7 +99,7 @@ const Program = () => {
                 <br />
                 <i>Dining etiquette</i> helps children develop a sense of decorum and self-assuredness in various social contexts. Students will practice and master the nuances of dining etiquette, from basic table settings to sophisticated social interactions. This program not only prepares children for formal events but also instills a lifelong appreciation for social grace and etiquette, contributing significantly to their personal and social development.
                 <br />
-                This program is led by <strong>Sagar Subedi</strong>, who brings expert knowledge and a passion for teaching social skills to young learners.`
+                This program brings expert knowledge and a passion for teaching social skills to young learners.`
     },
     {
       image: oralHealth,
@@ -109,7 +109,7 @@ const Program = () => {
                 <br />
                 Good oral hygiene helps prevent cavities, gum disease, and other dental issues. Through interactive lessons, children will understand the significance of taking care of their teeth, gums, and overall oral health. This program not only promotes a healthier lifestyle but also instills confidence in children by encouraging them to smile brightly and take pride in their dental care.
                 <br />
-                This program is led by <strong>Dr. Aarzu Thapa</strong>, a dedicated professional with a passion for educating young learners about the importance of oral health and hygiene.`
+                This program is led by our a dedicated professional with a passion for educating young learners about the importance of oral health and hygiene.`
     },
     {
       image: music,
