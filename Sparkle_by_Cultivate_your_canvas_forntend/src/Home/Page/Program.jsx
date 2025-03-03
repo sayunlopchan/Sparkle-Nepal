@@ -37,6 +37,7 @@ import prop12 from "../../assets/icons/session.png";
 import prop13 from "../../assets/icons/Vacation.png";
 import prop14 from "../../assets/icons/summer.png";
 import prop15 from "../../assets/icons/camp.png";
+import prop16 from "../../assets/icons/art_woorkshop.png";
 
 import AnimatedComponent2 from "../../components/Animation/AnimatedComponent2";
 import AnimatedComponent from "../../components/Animation/AnimatedComponent";
@@ -48,11 +49,20 @@ const Program = () => {
     {
       image: arts,
       icon: prop1,
-      title: "Arts",
-      para: `At <strong>Sparkle Kids Academy</strong>, our art classes, led by the talented young artist, offer children a unique opportunity to explore their creativity and imagination. Art plays a vital role in a child's development, helping them to express their thoughts and emotions in a visual and tangible way. Through our art program, students will develop fine motor skills, enhance their problem-solving abilities, and improve their visual-spatial understanding.
-            <br />
-            Art encourages children to think critically, make decisions, and explore different perspectives. It fosters creativity and innovation, allowing kids to experiment with colors, shapes, and techniques, leading to a deeper understanding of the world around them. Under Lujala Shakya's guidance, students are inspired to create and express themselves freely, building confidence and self-esteem. Engaging in art not only nurtures a child's artistic talents but also contributes to their overall cognitive and emotional development, making it an essential part of a well-rounded education.`,
+      title: "Art Classes",
+      para: `At <strong>Sparkle Kids Academy</strong>, our art classes, guided by the talented young artist, provide children with a unique opportunity to unleash their creativity and imagination. Art is an essential part of a child's development, enabling them to express their thoughts and emotions in visual and tangible ways. Through our art program, students will enhance their fine motor skills, problem-solving abilities, and visual-spatial understanding.
+      <br />
+      Art helps children think critically, make decisions, and explore different perspectives. It encourages creativity and innovation, allowing them to experiment with colors, shapes, and techniques, leading to a richer understanding of the world around them. Under the mentorship of Lujala Shakya, students are inspired to create and express themselves freely, building confidence and self-esteem. Participating in art not only nurtures a child’s artistic talents but also contributes to their cognitive and emotional development, making it an essential part of a well-rounded education.`
     },
+    {
+      image: arts,
+      icon: prop16,
+      title: "Art Workshop",
+      para: `Discover your creative potential at our Art Workshop! Led by experienced artists, this workshop at Sparkle Kids Academy provides a dynamic environment where participants can explore various artistic techniques and mediums. Whether you're a beginner or seasoned artist, join us to refine your skills, express your imagination, and connect with fellow art enthusiasts.
+      <br />
+      Our workshops focus on fostering creativity, developing artistic confidence, and encouraging experimentation. Through hands-on activities and personalized guidance, you'll unlock new perspectives and gain valuable insights into the world of art. Embrace the joy of creating and take your artistic journey to the next level with us.`,
+    }
+    ,
     {
       image: yoga,
       icon: prop2,

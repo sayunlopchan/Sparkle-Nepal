@@ -17,7 +17,7 @@ const SliderData = [
   {
     img: img1,
     title: "Art",
-    author: "Lujala Shakya",
+    author: "",
     description:
       "Children can explore their creativity while developing important skills. Art enhances motor abilities, problem-solving, and spatial awareness. It encourages critical thinking and self-expression, building confidence. Engaging in art also supports overall cognitive and emotional growth, making it a valuable part of education.",
     color: 'text-red-500',
@@ -25,7 +25,7 @@ const SliderData = [
   {
     img: img2,
     title: "Dance",
-    author: "Milan Khadka",
+    author: "",
     description:
       "Children can develop coordination, balance, and flexibility while fostering creativity and self-expression through dance classes. These classes build confidence and a love for the art with structured, engaging instruction.",
     color: 'text-blue-500'
@@ -33,7 +33,7 @@ const SliderData = [
   {
     img: img3,
     title: "Yoga",
-    author: "Sushmita Chamling Rai",
+    author: "",
     description:
       "Yoga program helps children improve focus, flexibility, and emotional balance through guided poses and mindfulness. It builds body awareness and coordination, fostering resilience and confidence.",
     color: 'text-orange-500'
@@ -41,7 +41,7 @@ const SliderData = [
   {
     img: img4,
     title: "Public Speaking",
-    author: "Snehalata Raut Thapa",
+    author: "",
     description:
       "Build confidence and improve communication skills.Learn to articulate thoughts clearly, organize ideas effectively, and engage with audiences, setting the stage for future leadership and enhancing their ability to express themselves persuasively.",
     color: 'text-green-500'
@@ -114,7 +114,7 @@ const Slider = () => {
           <h2 className={`content-h2 ${SliderData[currentIndex].color}`}>
             {SliderData[currentIndex].title}
           </h2>
-          <h3 className="content-h3">-{SliderData[currentIndex].author}</h3>
+          {/* <h3 className="content-h3">-{SliderData[currentIndex].author}</h3> */}
           <span className="flex">
             <p className="content-p">
               <span className="font-bold text-xl">"</span>
