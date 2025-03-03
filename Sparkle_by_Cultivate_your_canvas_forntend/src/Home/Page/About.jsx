@@ -75,14 +75,11 @@ const About = () => {
         </div >
 
         {/*Team Heading */}
-        <div className='p-10 space-y-5'>
-          <div className='space-y-5'>
-            <ChairWomenMessage />
-
-          </div>
-
-
-        </div>
+        {/* <div className='p-10 space-y-5'> */}
+        {/* <div className='space-y-5'> */}
+        <ChairWomenMessage />
+        {/* </div> */}
+        {/* </div> */}
         {/* ambition*/}
         <div className='flex max-lg:flex-wrap justify-between rounded-lg overflow-hidden gap-5 p-10 bg-white'>
 
