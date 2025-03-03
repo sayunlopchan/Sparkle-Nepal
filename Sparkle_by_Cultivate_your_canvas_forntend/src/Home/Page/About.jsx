@@ -22,7 +22,7 @@ const About = () => {
         mainText={"Empowering Tomorrow's Sparkling Leaders Today"}
         subText={"Let Your Child Sparkle"}
       />
-      <div className='p-10 pb-10 lg:p-20 space-y-20'>
+      <div className='pb-10  w-[90%] m-auto space-y-20'>
 
 
         {/* grid */}
@@ -74,12 +74,8 @@ const About = () => {
 
         </div >
 
-        {/*Team Heading */}
-        {/* <div className='p-10 space-y-5'> */}
-        {/* <div className='space-y-5'> */}
         <ChairWomenMessage />
-        {/* </div> */}
-        {/* </div> */}
+
         {/* ambition*/}
         <div className='flex max-lg:flex-wrap justify-between rounded-lg overflow-hidden gap-5 p-10 bg-white'>
 

@@ -25,7 +25,7 @@ const Homepage = () => {
       <Slider />
       <GridGallery_1 />
       <Introduction />
-      <div className='overflow-x-hidden'>
+      <div className='overflow-hidden'>
         <ChairWomenMessage />
       </div>
       <Counter_Ui />

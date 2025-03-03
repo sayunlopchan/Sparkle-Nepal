@@ -6,10 +6,11 @@
   width: 100vw;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 40px;
+  padding: 0px 20px;
   color: black;
   overflow-x: hidden;
 }
+
 .slider-header {
   font-size: 20px;
   transition: 0.2s;
@@ -18,7 +19,7 @@
   width: 100vw;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  padding: 0px 10px;
   color: white;
   overflow-x: hidden;
 }
