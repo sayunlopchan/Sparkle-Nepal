@@ -2,178 +2,172 @@
 
 const createContactEmailTemplate = (email, subject, fullName, message) => {
   return `
-  
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form Submission</title>
- <style>
-        /* General Reset */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f2f2f2;
-        }
+    <title>New Contact Message</title>
+    <style>
+      /* Modern Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
+      body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        background-color: #f8fafc;
+      }
+
+      .container {
+        max-width: 680px;
+        margin: 2rem auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+      }
+
+      /* Header Section */
+      .letterhead {
+        background: linear-gradient(135deg, #558bff 0%, #1d4ed8 100%);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .letterhead h1 {
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      /* Content Styling */
+      .content {
+        padding: 2rem;
+        color: #334155;
+      }
+
+      .message-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .sender-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .info-item {
+        padding: 1rem;
+        background: #f8fafc;
+        border-radius: 6px;
+        margin-bottom: 20px;
+      }
+
+      .info-label {
+        color: #64748b;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .info-value {
+        color: #1e293b;
+        font-weight: 500;
+      }
+
+      .message-content {
+        border-left: 4px solid #3b82f6;
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      /* Footer Styling */
+      .footer {
+        background: linear-gradient(135deg, #558bff 0%, #1d4ed8 100%);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .footer-logo {
+        width: 120px;
+        margin-bottom: 1.5rem;
+      }
+
+
+      @media (max-width: 640px) {
         .container {
-            width: 100%;
-            max-width: 700px;
-            margin: 40px auto;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          margin: 1rem;
         }
 
-        /* Letterhead Styling */
-        .letterhead {
-            background-color: #4CAF50;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+        .sender-info {
+          grid-template-columns: 1fr;
         }
-
-        .letterhead h1 {
-            margin: 0;
-            font-size: 28px;
-        }
-
-        /* Content Styling */
-        .content {
-            padding: 30px;
-        }
-
-        .content h2 {
-            font-size: 22px;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .content p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .content .info {
-            margin-bottom: 20px;
-        }
-
-        .content .info p {
-            margin: 5px 0;
-            font-size: 16px;
-        }
-
-        .content .info strong {
-            color: #4CAF50;
-        }
-
-        /* Message Title Styling */
-        .message-title {
-            background-color: #f2f2f2;
-            padding: 10px;
-            margin-bottom: 15px;
-            font-weight: bold;
-            font-size: 18px;
-            color: #333;
-            border-left: 4px solid #4CAF50;
-        }
-
-        /* Footer Styling */
-        .footer {
-            background-color: #333;
-            color: #ffffff;
-            padding: 15px;
-            text-align: center;
-            font-size: 14px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-
-        .footer a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Image Styling */
-        .footer img {
-            max-width: 150px;
-            height: auto;
-            margin: 10px 0;
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 600px) {
-            .container {
-                width: 90%;
-            }
-
-            .letterhead h1 {
-                font-size: 24px;
-            }
-
-            .content h2 {
-                font-size: 20px;
-            }
-        }
-
-        /* Media Query for screens smaller than 400px */
-        @media (max-width: 400px) {
-            .letterhead h1 {
-                font-size: 18px;
-            }
-
-            .content h2 {
-                font-size: 16px;
-            }
-
-            .p-message {
-                font-size: 12px;
-            }
-        }
-
+      }
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <div class="container">
-        
-        <!-- Letterhead -->
-        <div class="letterhead">
-            <h1>New Message !!!</h1>
-        </div>
+      <!-- Header -->
+      <div class="letterhead">
+        <h1>
+          ✉️ New Contact Message
+        </h1>
+      </div>
 
-        <!-- Body Content -->
-        <div class="content">
-            <h2>Submitted Information:</h2>
-            <div class="info">
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Subject:</strong> ${subject}</p>
-                <p><strong>Full Name:</strong> ${fullName}</p>
-              
-                <!-- Message Title with Background Color -->
-                <div class="message-title">Message:</div>
-                <p class="p-message">${message}</p>
+      <!-- Body Content -->
+      <div class="content">
+        <div class="message-card">
+          <div class="sender-info">
+            <div class="info-item">
+              <div class="info-label">From</div>
+              <div class="info-value">${fullName}</div>
             </div>
+            <div class="info-item">
+              <div class="info-label">Email</div>
+              <div class="info-value">${email}</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Subject</div>
+              <div class="info-value">${subject}</div>
+            </div>
+          </div>
+
+          <div class="message-content">
+            <div class="info-label">Message</div>
+            <p style="margin-top: 0.5rem; color: #475569; line-height: 1.6;">${message}</p>
+          </div>
 
         </div>
+      </div>
 
-        <!-- Footer -->
-        <div class="footer">
-                      <img src="https://sparklenepal.com/assets/SPARKLE_LOGO-DhKy7uhc.png" alt="Sparkle Logo">
-            <p>&copy; 2024 Sparkle Kids Academy. All Rights Reserved.</p>
-            <p>Visit us at <a href="www.sparklekidsacademy.com">www.sparklekidsacademy.com</a></p>
+      <!-- Footer -->
+      <div class="footer">
+        <img src="https://sparklenepal.com/assets/SPARKLE_LOGO-DhKy7uhc.png" alt="Sparkle Logo" class="footer-logo">
 
-        </div>
+
+        <p style="opacity: 0.8; margin-top: 1rem; font-size: 0.875rem;">
+          © 2024 Sparkle Kids Academy<br>
+          123 Education Lane, Learning City
+        </p>
+      </div>
     </div>
-</body>
-</html>
+  </body>
 
+</html>
   
   `;
 };

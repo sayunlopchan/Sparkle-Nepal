@@ -20,298 +20,256 @@ const createAdmissionEmailTemplate = (
   emergencyNumber,
   nationality,
   // Courses
-  course,
+  courseEnrollementPeriod,
   reference,
 
 ) => {
   return `
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>New Admission Form</title>
+
+  <head>
+    <title>New Admission Notification</title>
     <style>
-        /* General Reset */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        /* Container */
+      body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        background-color: #f8fafc;
+        line-height: 1.6;
+      }
+
+      .email-container {
+        max-width: 680px;
+        margin: 2rem auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+      }
+
+      .email-header {
+        background: linear-gradient(135deg, #558bff 0%, #1d4ed8 100%);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .header-badge {
+        background: #4f46e5;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+      }
+
+      .email-body {
+        padding: 2rem;
+        color: #334155;
+      }
+
+      .section-card {
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .section-title {
+        color: #1e40af;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .data-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      .data-item {
+        padding: 0.75rem;
+        background: #f8fafc;
+        border-radius: 6px;
+      }
+
+      .data-label {
+        color: #64748b;
+        font-size: 0.875rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .data-value {
+        color: #1e293b;
+        font-weight: 500;
+      }
+
+      .emergency-alert {
+        background: #fee2e2;
+        border: 1px solid #fca5a5;
+      }
+
+      .footer {
+        background: linear-gradient(135deg, #558bff 0%, #1d4ed8 100%);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
         .email-container {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            overflow: hidden;
+          margin: 1rem;
         }
-
-        /* Header */
-        .email-header {
-            background-color: #4CAF50;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .email-header h1 {
-            margin: 0;
-            font-size: 28px;
-        }
-
-        /* Content */
-        .email-body {
-            padding: 20px;
-        }
-
-        h3 {
-            margin-bottom: 10px;
-            color: #4CAF50;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        table th, table td {
-            text-align: left;
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        table th {
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        table td {
-            color: #555;
-        }
-
-        /* Footer */
-        .email-footer {
-            background-color: #333;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-        }
-
-        .email-footer a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Image Styling */
-        .email-image {
-            display: block;
-            margin: 0 auto 20px auto;
-            max-width: 100%;
-            border-radius: 4px;
-        }
-
-        /* Reference and Contact */
-        .reference {
-            font-weight: bold;
-            color: #4CAF50;
-        }
-
-        .contact {
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        /* Footer Styling */
-        .footer {
-            background-color: #333;
-            color: #ffffff;
-            padding: 15px;
-            text-align: center;
-            font-size: 14px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-
-        .footer a {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .footer img {
-            max-width: 150px;
-            height: auto;
-            margin: 10px 0;
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 600px) {
-            .email-container {
-                width: 100%;
-                padding: 10px;
-            }
-
-            .email-header h1 {
-                font-size: 24px;
-            }
-
-            h3 {
-                font-size: 18px;
-            }
-
-            table th, table td {
-                font-size: 14px;
-            }
-
-            .footer img {
-                max-width: 120px;
-            }
-        }
-
-        /* Media Query for very small screens (less than 400px) */
-        @media (max-width: 400px) {
-            .email-header h1 {
-                font-size: 20px;
-            }
-
-            h3 {
-                font-size: 16px;
-            }
-
-            table th, table td {
-                font-size: 12px;
-            }
-
-            .footer img {
-                max-width: 100px;
-            }
-
-            .email-body {
-                padding: 15px;
-            }
-
-            .footer {
-                padding: 10px;
-            }
-        }
-
+      }
     </style>
-</head>
-<body>
-    <!-- Container -->
+  </head>
+
+  <body>
     <div class="email-container">
-        
-        <!-- Header -->
-        <div class="email-header">
-            <h1>New Admission Form</h1>
+      <div class="email-header">
+        <div class="header-badge">NEW ADMISSION</div>
+        <h1>Admission Application Received</h1>
+        <p style="margin-top: 0.5rem;">Reference: ${reference}</p>
+      </div>
+
+      <div class="email-body">
+        <!-- Student Details -->
+        <div class="section-card">
+          <div class="section-title">
+            📚 Student Information
+          </div>
+          <div class="data-grid">
+            <div class="data-item">
+              <div class="data-label">Full Name</div>
+              <div class="data-value">${studentName}</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Date of Birth</div>
+              <div class="data-value">${studentDob}</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Age</div>
+              <div class="data-value">${studentAge}</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Gender</div>
+              <div class="data-value">${studentGender}</div>
+            </div>
+            <div class="data-item" style="grid-column: span 2">
+              <div class="data-label">Address</div>
+              <div class="data-value">${studentAddress}</div>
+            </div>
+          </div>
         </div>
-        
-        <!-- Body -->
-        <div class="email-body">
-            
-            <h3>Student Details:</h3>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <td>${studentName}</td>
-                </tr>
-                <tr>
-                    <th>DOB</th>
-                    <td>${studentDob}</td>
-                </tr>
-                <tr>
-                    <th>Age</th>
-                    <td>${studentAge}</td>
-                </tr>
-                <tr>
-                    <th>Gender</th>
-                    <td>${studentGender}</td>
-                </tr>
-                <tr>
-                    <th>Address</th>
-                    <td>${studentAddress}</td>
-                </tr>
-                <tr>
-                    <th>Food Allergies</th>
-                    <td>${foodAllergies}</td>
-                </tr>
-                <tr>
-                    <th>Health Issue</th>
-                    <td>${healthIssues}</td>
-                </tr>
-            </table>
 
-            <h3>Guardian Details:</h3>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <td>${guardianName}</td>
-                </tr>
-                <tr>
-                    <th>DOB</th>
-                    <td>${guardianDob}</td>
-                </tr>
-                <tr>
-                    <th>Age</th>
-                    <td>${guardianAge}</td>
-                </tr>
-                <tr>
-                    <th>Gender</th>
-                    <td>${guardianGender}</td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td>${email}</td>
-                </tr>
-                <tr>
-                    <th>Emergency Number</th>
-                    <td>${emergencyNumber}</td>
-                </tr>
-                <tr>
-                    <th>Contact Number</th>
-                    <td>${number}</td>
-                </tr>
-                <tr>
-                    <th>Marital Status</th>
-                    <td>${maritalStatus}</td>
-                </tr>
-                <tr>
-                    <th>Address</th>
-                    <td>${guardianAddress}</td>
-                </tr>
-                <tr>
-                    <th>Nationality</th>
-                    <td>${nationality}</td>
-                </tr>
-            </table>
-
-            <h3>Membership Details:</h3>
-            <table>
-                <tr>
-                    <th>Course Enrollment</th>
-                    <td>${course}</td>
-                </tr>
-            </table>
-
-            <p class="reference">Reference: ${reference}</p>
-
+        <!-- Guardian Details -->
+        <div class="section-card">
+          <div class="section-title">
+            👨👩 Guardian Details
+          </div>
+          <div class="data-grid">
+            <div class="data-item">
+              <div class="data-label">Full Name</div>
+              <div class="data-value">${guardianName}</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Date of Birth</div>
+              <div class="data-value">${guardianDob}</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Age</div>
+              <div class="data-value">${guardianAge}</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Gender</div>
+              <div class="data-value">${guardianGender}</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Marital Status</div>
+              <div class="data-value">${maritalStatus}</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Nationality</div>
+              <div class="data-value">${nationality}</div>
+            </div>
+            <div class="data-item" style="grid-column: span 2">
+              <div class="data-label">Address</div>
+              <div class="data-value">${guardianAddress}</div>
+            </div>
+          </div>
         </div>
-        
-        <!-- Footer -->
-        <div class="footer">
-            <img src="https://sparklenepal.com/assets/SPARKLE_LOGO-DhKy7uhc.png" alt="Sparkle Logo">
-            <p>&copy; 2024 Sparkle Kids Academy. All Rights Reserved.</p>
-            <p>Visit us at <a href="http://www.sparklekidsacademy.com">www.sparklekidsacademy.com</a></p>
+
+        <!-- Contact Information -->
+        <div class="section-card">
+          <div class="section-title">
+            📞 Contact Information
+          </div>
+          <div class="data-grid">
+            <div class="data-item">
+              <div class="data-label">Email</div>
+              <div class="data-value">${email}</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Primary Contact</div>
+              <div class="data-value">${number}</div>
+            </div>
+            <div class="data-item emergency-alert">
+              <div class="data-label">Emergency Contact</div>
+              <div class="data-value">${emergencyNumber}</div>
+            </div>
+          </div>
         </div>
+
+        <!-- Health Information -->
+        <div class="section-card">
+          <div class="section-title">
+            ⚕️ Health Information
+          </div>
+          <div class="data-grid">
+            <div class="data-item">
+              <div class="data-label">Food Allergies</div>
+              <div class="data-value">${foodAllergies}</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Health Issues</div>
+              <div class="data-value">${healthIssues}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enrollment Details -->
+        <div class="section-card">
+          <div class="section-title">
+            🎓 Enrollment Information
+          </div>
+          <div class="data-grid">
+            <div class="data-item" style="background: #dbeafe;">
+              <div class="data-label">Selected Course period</div>
+              <div class="data-value" style="color: #2563eb;">${courseEnrollementPeriod}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <img src="https://sparklenepal.com/assets/SPARKLE_LOGO-DhKy7uhc.png" alt="Sparkle Logo"
+          style="width: 120px; margin-bottom: 1rem;">
+        <p style="opacity: 0.9;">© 2024 Sparkle Kids Academy</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Visit us at <a href="https://sparklenepal.com"
+            style="color: #93c5fd; text-decoration: none;">www.sparklenepal.com</a></p>
+      </div>
     </div>
-</body>
-</html>
+  </body>
 
+</html>
 `;
 };
 
