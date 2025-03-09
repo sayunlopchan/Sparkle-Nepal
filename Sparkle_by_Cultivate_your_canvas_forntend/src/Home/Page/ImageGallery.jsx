@@ -328,31 +328,32 @@ const ImageGallery = () => {
     <div className='w-full bg-[#CCE0FF] '>
       {/* Static header */}
       <StaticHeader />
-
-      {/* Navigation */}
-      <header className='w-full'>
-        <nav className='flex flex-wrap gap-5 justify-center py-5 text-sm lg:text-lg'>
-          <span onClick={() => setActiveCategory('All')} className={getNavItemClasses('All')}>All</span>
-          <span onClick={() => setActiveCategory('Arts')} className={getNavItemClasses('Arts')}>Arts</span>
-          <span onClick={() => setActiveCategory('Yoga')} className={getNavItemClasses('Yoga')}>Yoga</span>
-          <span onClick={() => setActiveCategory('Dance')} className={getNavItemClasses('Dance')}>Dance</span>
-          <span onClick={() => setActiveCategory('Public_Speaking')} className={getNavItemClasses('Public_Speaking')}>Public Speaking</span>
-          <span onClick={() => setActiveCategory('Personality_Development')} className={getNavItemClasses('Personality_Development')}>Personality Development</span>
-          <span onClick={() => setActiveCategory('Others')} className={getNavItemClasses('Others')}>Others</span>
-        </nav>
-      </header>
-      <div className='flex flex-wrap justify-center'>
-        {images[activeCategory]?.length > 0 ? (
-          images[activeCategory].map((img, index) => (
-            <div key={index} className='m-2'>
-              <img src={img} alt={activeCategory} loading="lazy" className='h-[200px] object-cover' />
+      <div className="body-container">
+        {/* Navigation */}
+        <header className='w-full'>
+          <nav className='flex flex-wrap gap-5 justify-center py-5 text-sm lg:text-lg'>
+            <span onClick={() => setActiveCategory('All')} className={getNavItemClasses('All')}>All</span>
+            <span onClick={() => setActiveCategory('Arts')} className={getNavItemClasses('Arts')}>Arts</span>
+            <span onClick={() => setActiveCategory('Yoga')} className={getNavItemClasses('Yoga')}>Yoga</span>
+            <span onClick={() => setActiveCategory('Dance')} className={getNavItemClasses('Dance')}>Dance</span>
+            <span onClick={() => setActiveCategory('Public_Speaking')} className={getNavItemClasses('Public_Speaking')}>Public Speaking</span>
+            <span onClick={() => setActiveCategory('Personality_Development')} className={getNavItemClasses('Personality_Development')}>Personality Development</span>
+            <span onClick={() => setActiveCategory('Others')} className={getNavItemClasses('Others')}>Others</span>
+          </nav>
+        </header>
+        <div className='flex flex-wrap justify-center'>
+          {images[activeCategory]?.length > 0 ? (
+            images[activeCategory].map((img, index) => (
+              <div key={index} className='m-2'>
+                <img src={img} alt={activeCategory} loading="lazy" className='h-[200px] object-cover' />
+              </div>
+            ))
+          ) : (
+            <div className='flex items-center justify-center w-full h-[200px]'>
+              <p className='text-lg text-gray-500'>No images found</p>
             </div>
-          ))
-        ) : (
-          <div className='flex items-center justify-center w-full h-[200px]'>
-            <p className='text-lg text-gray-500'>No images found</p>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

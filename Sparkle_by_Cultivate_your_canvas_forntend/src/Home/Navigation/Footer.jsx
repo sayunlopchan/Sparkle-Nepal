@@ -21,14 +21,13 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { toast } from "react-toastify";
-
+import { subscribe } from "../../constant/Route";
+import axios from "axios";
 
 
 
 
 const Footer = () => {
-
-
 
   const [isDisabled, setIsDisabled] = useState(false);
 
@@ -37,19 +36,29 @@ const Footer = () => {
       email: ''
     },
     validationSchema: Yup.object({
-      email: Yup.string().email('Invalid email address').required('email is required')
+      email: Yup.string()
+        .email('Invalid email address')
+        .required('Email is required')
     }),
-    onSubmit: (values, { resetForm }) => {
-      setIsDisabled(true); // Disable the button after submitting
-      toast.success('Thank you for subscribing');
+    onSubmit: async (values, { resetForm }) => {
 
-      // Reset the input field after submitting
-      resetForm();
-
-      // Re-enable the button after 6 seconds
-      setTimeout(() => {
-        setIsDisabled(false);
-      }, 6000);
+      setIsDisabled(true);
+      try {
+        // Send email
+        const response = await axios.post(subscribe, { email: values.email });
+        if (response.status === 200) {
+          toast.success("Thank you for subscribing!");
+          resetForm();
+        } else {
+          toast.error("Subscription failed. Please try again.");
+        }
+      } catch (error) {
+        toast.error("Failed to send message. Please try again.");
+      } finally {
+        setTimeout(() => {
+          setIsDisabled(false);
+        }, 6000);
+      }
     },
   });
 
@@ -73,7 +82,7 @@ const Footer = () => {
             <div className="footer-icon-container ">
               <a href="https://www.facebook.com/sparkle.cyc"><FaFacebook size={30} /></a>
               <a href="https://www.instagram.com/sparkle__kids_academy/"><FaInstagram size={30} /></a>
-              <a href=""><FaWhatsapp size={30} /></a>
+              <a href="https://wa.me/9857049590"><FaWhatsapp size={30} /></a>
             </div>
 
 
@@ -144,8 +153,9 @@ const Footer = () => {
                 />
                 <div className="btn-container">
                   <button type="submit" disabled={isDisabled}>
-                    {isDisabled ? 'Subscribe' : 'Subscribe'}
+                    {isDisabled ? 'Subscribing...' : 'Subscribe'}
                   </button>
+
                 </div>
               </form>
               {formik.touched.email && formik.errors.email ? (

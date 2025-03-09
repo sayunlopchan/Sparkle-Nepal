@@ -196,58 +196,60 @@ const Program = () => {
   return (
     <div className="bg-[#CCE0FF] overflow-hidden">
       <StaticHeader />
-      <div className="space-y-5">
-        {/* heading */}
-        <Useable
-          message={"Sparklye by CYC"}
-          mainText={"Building Tomorrows Leaders:"}
-          subText={"Inspiring Innovation and Confidence in Every Child"}
-        />
+      <div className="body-container">
+        <div className="space-y-5">
+          {/* heading */}
+          <Useable
+            message={"Sparklye by CYC"}
+            mainText={"Building Tomorrows Leaders:"}
+            subText={"Inspiring Innovation and Confidence in Every Child"}
+          />
 
-        {/* Banner Image */}
-        <div className="w-[90vw] mx-auto object-cover border-t-8 border-t-red-500 border-r-8 border-r-green-500 border-b-8 border-b-blue-500 border-l-8 border-l-yellow-500 rounded-3xl overflow-hidden">
-          <img src={bannerImage} alt={bannerImage} />
+          {/* Banner Image */}
+          <div className=" mx-auto object-cover border-t-8 border-t-red-500 border-r-8 border-r-green-500 border-b-8 border-b-blue-500 border-l-8 border-l-yellow-500 rounded-3xl overflow-hidden">
+            <img src={bannerImage} alt={bannerImage} />
+          </div>
+
+          {/* Program Sections */}
+          {programData.map((program, index) => (
+            <React.Fragment key={index}>
+              <div
+                className={`flex ${index % 2 === 0
+                  ? "max-lg:flex-col"
+                  : "flex-row-reverse max-lg:flex-col"
+                  } gap-6 md:gap-24 p-10 items-center`}
+              >
+                <div className="lg:w-[40%]">
+                  <AnimatedComponent>
+                    <img
+                      src={program.image}
+                      alt={program.title}
+                      className={`animate-animate object-cover max-sm:h-full max-md:hidden size-[500px]`}
+                    />
+                  </AnimatedComponent>
+                </div>
+                <div className="lg:w-[60%]">
+                  <AnimatedComponent2>
+                    <div className="flex justify-center items-start flex-col">
+                      <img src={program.icon} alt="" className="size-[100px]" />
+                      <h2 className="font-bold text-[30px]">{program.title}</h2>
+                    </div>
+                    <p
+                      className="p-text"
+                      dangerouslySetInnerHTML={{ __html: program.para }}
+                    />
+                  </AnimatedComponent2>
+                </div>
+              </div>
+
+              {index === 2 && <Booking />}
+            </React.Fragment>
+          ))}
+
+          <p className="px-2 text-xs text-gray-600 italic">
+            Disclaimer: Some images displayed on this page are sourced from the internet and are not owned by us.
+          </p>
         </div>
-
-        {/* Program Sections */}
-        {programData.map((program, index) => (
-          <React.Fragment key={index}>
-            <div
-              className={`flex ${index % 2 === 0
-                ? "max-lg:flex-col"
-                : "flex-row-reverse max-lg:flex-col"
-                } gap-6 md:gap-24 p-10 items-center`}
-            >
-              <div className="lg:w-[40%]">
-                <AnimatedComponent>
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                    className={`animate-animate object-cover max-sm:h-full max-md:hidden size-[500px]`}
-                  />
-                </AnimatedComponent>
-              </div>
-              <div className="lg:w-[60%]">
-                <AnimatedComponent2>
-                  <div className="flex justify-center items-start flex-col">
-                    <img src={program.icon} alt="" className="size-[100px]" />
-                    <h2 className="font-bold text-[30px]">{program.title}</h2>
-                  </div>
-                  <p
-                    className="p-text"
-                    dangerouslySetInnerHTML={{ __html: program.para }}
-                  />
-                </AnimatedComponent2>
-              </div>
-            </div>
-
-            {index === 2 && <Booking />}
-          </React.Fragment>
-        ))}
-
-        <p className="px-2 text-xs text-gray-600 italic">
-          Disclaimer: Some images displayed on this page are sourced from the internet and are not owned by us.
-        </p>
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ const Contact = () => {
         const response = await axios.post(sendMessage, { values });
 
         if (response.status === 200) {
-          toast.success("Thank you for submitting! Please visit our office with a photo.");
+          toast.success("Thank you for contacting us!");
           resetForm();
         } else {
           throw new Error('Failed to send message');

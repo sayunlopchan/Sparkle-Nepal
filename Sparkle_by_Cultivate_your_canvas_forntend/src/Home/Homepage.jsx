@@ -23,16 +23,17 @@ const Homepage = () => {
   return (
     <div className='space-y-10'>
       <Slider />
-      <GridGallery_1 />
-      <Introduction />
-      <div className='overflow-hidden'>
-        <ChairWomenMessage />
-      </div>
-      <Counter_Ui />
-      <GridGallery_2 />
-      <WhyChooseUs />
-      <FAQ />
-
+      <div className="body-container">
+        <GridGallery_1 />
+        <Introduction />
+        <div className='overflow-hidden'>
+          <ChairWomenMessage />
+        </div>
+        <Counter_Ui />
+        <GridGallery_2 />
+        <WhyChooseUs />
+        <FAQ />
+      </div >
     </div >
   )
 }
