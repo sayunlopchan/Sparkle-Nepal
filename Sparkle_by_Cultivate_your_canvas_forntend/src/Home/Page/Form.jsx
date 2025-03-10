@@ -22,6 +22,8 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { sendEmail } from "../../constant/Route";
 import { useState } from "react";
+import AlertBox from "../../components/alertbox/AlertBox";
+
 
 const processes = [
   {
@@ -53,6 +55,10 @@ const processes = [
 
 
 const Form = () => {
+
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertStatus, setAlertStatus] = useState('success');
+  const [alertMessage, setAlertMessage] = useState('');
 
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -163,18 +169,21 @@ const Form = () => {
     }),
 
     onSubmit: async (values, { resetForm }) => {
-
       try {
         const response = await axios.post(sendEmail, values);
-
         if (response.status === 200) {
-          toast.success("Thank you for submitting! Please visit our office with a photo.");
+          setAlertStatus('success');
+          setAlertMessage('Thank you for submitting! Please visit our office with a photo.');
+          setShowAlert(true);
           resetForm();
-        } else {
-          throw new Error('Failed to send message');
+          setCurrentStep(1);
+          setTimeout(() => setShowAlert(false), 5000);
         }
       } catch (error) {
-        toast.error("Failed to send message. Please try again.");
+        setAlertStatus('error');
+        setAlertMessage(error.response?.data?.message || 'Failed to send form. Please try again.');
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 5000);
       }
     },
   });
@@ -206,7 +215,7 @@ const Form = () => {
 
           <form
             onSubmit={(e) => {
-              e.preventDefault(); // Always prevent default submission
+              e.preventDefault(); // prevent default submission
               if (currentStep === 3) {
                 formik.handleSubmit(e);
               }
@@ -379,8 +388,8 @@ const Form = () => {
                       type="text"
                       id="foodAllergies"
                       name="foodAllergies"
-                      placeholder="Specify any known food allergies or enter 'None' if not applicable"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none text-[8px] sm:text-xs md:text-base"
+                      placeholder="List any food allergies or enter 'None.'"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none  sm:text-xs md:text-base"
                       {...formik.getFieldProps("foodAllergies")}
                     />
                     {formik.touched.foodAllergies && formik.errors.foodAllergies ? (
@@ -404,8 +413,8 @@ const Form = () => {
                       type="text"
                       id="healthIssues"
                       name="healthIssues"
-                      placeholder="Specify any known health issues or enter 'None' if not applicable"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none text-[8px] sm:text-xs md:text-base"
+                      placeholder="List any health issues or enter 'None.'"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none sm:text-xs md:text-base"
                       {...formik.getFieldProps("healthIssues")}
                     />
                     {formik.touched.healthIssues && formik.errors.healthIssues ? (
@@ -858,7 +867,16 @@ const Form = () => {
             </div>
 
           </form>
-
+          {/* Alert Box */}
+          {showAlert && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+              <AlertBox
+                status={alertStatus}
+                title={alertStatus === 'success' ? 'Success!' : 'Error!'}
+                message={alertMessage}
+              />
+            </div>
+          )}
 
         </div >
 

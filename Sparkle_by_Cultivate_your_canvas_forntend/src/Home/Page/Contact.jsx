@@ -13,8 +13,16 @@ import * as Yup from 'yup';
 import { toast } from "react-toastify";
 import axios from "axios";
 import { sendMessage } from "../../constant/Route";
+import AlertBox from "../../components/alertbox/AlertBox";
+import { useState } from "react";
 
 const Contact = () => {
+
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertStatus, setAlertStatus] = useState('success');
+  const [alertMessage, setAlertMessage] = useState('');
+
+
 
   // Initialize formik
   const formik = useFormik({
@@ -41,13 +49,19 @@ const Contact = () => {
         const response = await axios.post(sendMessage, { values });
 
         if (response.status === 200) {
-          toast.success("Thank you for contacting us!");
+          setAlertStatus('success');
+          setAlertMessage('Thank you for submitting! Please wait for our response');
+          setShowAlert(true);
           resetForm();
+          setTimeout(() => setShowAlert(false), 5000);
         } else {
           throw new Error('Failed to send message');
         }
       } catch (error) {
-        toast.error("Failed to send message. Please try again.");
+        setAlertStatus('error');
+        setAlertMessage(error.response?.data?.message || 'Failed to send form. Please try again.');
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 5000);
       }
     },
   });
@@ -93,6 +107,16 @@ const Contact = () => {
               <span className="font-semibold">01-5409722</span>
             </div>
           </a>
+          {/* Alert Box */}
+          {showAlert && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+              <AlertBox
+                status={alertStatus}
+                title={alertStatus === 'success' ? 'Success!' : 'Error!'}
+                message={alertMessage}
+              />
+            </div>
+          )}
         </div>
 
         {/* map & form */}
