@@ -64,9 +64,9 @@ const ChairWomenMessage = () => {
 
 
           {/* img frame */}
-          <div className="md:col-span-5 max-lg:order-1">
+          <div className="md:col-span-5 max-lg:order-1 p-2 max-w-[540px] bg-white">
             {/* <AnimatedComponent2> */}
-            <div className="relative lg:h-full lg:w-full h-[300px] w-[350px] ">
+            <div className="relative lg:h-full lg:w-full h-[300px] w-[350px] bg-black">
 
               {/* pin */}
               <img
@@ -78,7 +78,7 @@ const ChairWomenMessage = () => {
               <img
                 src={pin}
                 alt="push pin"
-                className="absolute z-10 size-10 right-[17%] -top-[10%] md:-top-[26%] md:right-[4%] lg:-top-7 lg:right-36 rotate-45"
+                className="absolute z-10 size-10 right-[17%] -top-[10%] md:-top-[26%] md:right-[4%] lg:-bottom-[10%] lg:left-[55%] rotate-45"
               />
 
               <img
