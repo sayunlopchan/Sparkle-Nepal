@@ -420,6 +420,11 @@ const Form = () => {
               </div>
             )}
 
+
+
+
+
+
             {/* Guardian Details Section - only shown in step 2 */}
             {currentStep === 2 && (
               <div>
@@ -728,6 +733,9 @@ const Form = () => {
               </div>
             )}
 
+
+
+
             {/* Membership Details Section - only shown in step 3 */}
             {currentStep === 3 && (
               <div>
@@ -816,8 +824,10 @@ const Form = () => {
                         ? isStepValid(step)
                           ? 'bg-green-500 ring-2 ring-blue-500'
                           : 'bg-red-500 ring-2 ring-blue-500'
-                        : isStepValid(step)
-                          ? 'bg-green-500'
+                        : step < currentStep
+                          ? isStepValid(step)
+                            ? 'bg-green-500'
+                            : 'bg-gray-300'
                           : 'bg-gray-300'
                         }`}
                     />
