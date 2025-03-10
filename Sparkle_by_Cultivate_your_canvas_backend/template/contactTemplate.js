@@ -161,7 +161,7 @@ const createContactEmailTemplate = (email, subject, fullName, message) => {
 
         <p style="opacity: 0.8; margin-top: 1rem; font-size: 0.875rem;">
           © 2024 Sparkle Kids Academy<br>
-          123 Education Lane, Learning City
+          Lalitpur-5, Manbhawan
         </p>
       </div>
     </div>
