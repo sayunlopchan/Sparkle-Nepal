@@ -1,7 +1,7 @@
 {
   "name": "sparkle_by_cultivate_your_canvas_backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
