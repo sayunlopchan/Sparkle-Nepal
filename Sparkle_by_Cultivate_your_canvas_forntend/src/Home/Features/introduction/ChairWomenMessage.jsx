@@ -66,7 +66,7 @@ const ChairWomenMessage = () => {
           {/* img frame */}
           <div className="md:col-span-5 max-lg:order-1 p-2 max-w-[540px] bg-white">
             {/* <AnimatedComponent2> */}
-            <div className="relative lg:h-full lg:w-full h-[300px] w-[350px] bg-black">
+            <div className="relative lg:h-full lg:w-full h-[300px] w-[350px] ">
 
               {/* pin */}
               <img
