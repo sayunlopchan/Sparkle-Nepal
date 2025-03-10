@@ -56,13 +56,18 @@ const Form = () => {
 
   const [currentStep, setCurrentStep] = useState(1);
 
+  const isStepValid = (step) => {
+    const fields = stepFields[step];
+    return fields.every(field => !formik.errors[field]);
+  };
+
   const stepFields = {
     1: ['studentName', 'studentDob', 'studentAge', 'studentGender', 'studentAddress', 'foodAllergies', 'healthIssues'],
     2: ['guardianName', 'guardianDob', 'guardianAge', 'guardianGender', 'number', 'emergencyNumber', 'guardianAddress', 'maritalStatus', 'email', 'nationality'],
     3: ['courseEnrollementDuration', 'reference']
   };
 
-  // Add these navigation handlers
+  // navigation handlers
   const handleNext = async () => {
     const errors = await formik.validateForm();
     const currentFields = stepFields[currentStep];
@@ -93,7 +98,7 @@ const Form = () => {
     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
-    return Math.max(0, age); // Ensure age never goes below 0
+    return Math.max(0, age);
   };
 
   const [isStudentAgeManuallyChanged, setIsStudentAgeManuallyChanged] = useState(false);
@@ -789,8 +794,8 @@ const Form = () => {
               </div>
             )}
 
-            {/* Navigation buttons */}
-            <div className="flex justify-between mt-8">
+            {/* Navigation buttons with progress dots */}
+            <div className="flex items-center justify-between mt-8">
               {currentStep > 1 && (
                 <button
                   type="button"
@@ -801,7 +806,26 @@ const Form = () => {
                 </button>
               )}
 
-              <div className="ml-auto">
+              {/* Progress dots */}
+              <div className="flex-grow flex justify-center">
+                <div className="flex items-center gap-2">
+                  {[1, 2, 3].map((step) => (
+                    <div
+                      key={step}
+                      className={`w-3 h-3 rounded-full transition-colors ${currentStep === step
+                        ? isStepValid(step)
+                          ? 'bg-green-500 ring-2 ring-blue-500'
+                          : 'bg-red-500 ring-2 ring-blue-500'
+                        : isStepValid(step)
+                          ? 'bg-green-500'
+                          : 'bg-gray-300'
+                        }`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <div>
                 {currentStep < 3 ? (
                   <button
                     type="button"
