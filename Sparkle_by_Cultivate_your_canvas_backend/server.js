@@ -107,7 +107,7 @@ app.post("/send-email", (req, res) => {
   const adminMailOptions = {
     from: email,
     to: process.env.EMAIL_USER,
-    subject: "New Admission Form",
+    subject: "New Admission Form Submission",
     html: adminEmailHtml,
   };
 
@@ -134,7 +134,7 @@ app.post("/send-email", (req, res) => {
   });
 });
 
-// POST endpoint to handle contact message submission
+// POST endpoint to handle contact form submission
 app.post("/send-message", (req, res) => {
   console.log("Received contact data:", req.body);
   const {
@@ -154,7 +154,7 @@ app.post("/send-message", (req, res) => {
   const mailOptions = {
     from: email,
     to: process.env.EMAIL_USER,
-    subject: "New Message",
+    subject: "New Contact Form Submission",
     html: emailHtml,
   };
 
