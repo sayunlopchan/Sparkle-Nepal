@@ -224,7 +224,7 @@ const Program = () => {
                     <img
                       src={program.image}
                       alt={program.title}
-                      className={`animate-animate object-cover max-sm:h-full max-md:hidden size-[500px]`}
+                      className="animate-animate object-cover max-sm:h-full max-md:hidden size-[500px]"
                     />
                   </AnimatedComponent>
                 </div>
@@ -242,9 +242,14 @@ const Program = () => {
                 </div>
               </div>
 
+              {/* Booking insertion after index 2*/}
               {index === 2 && <Booking />}
+
+              {/* Booking insertion before the last 3 items */}
+              {index === programData.length - 4 && <Booking />}
             </React.Fragment>
           ))}
+
 
           <p className="px-2 text-xs text-gray-600 italic">
             Disclaimer: Some images displayed on this page are sourced from the internet and are not owned by us.

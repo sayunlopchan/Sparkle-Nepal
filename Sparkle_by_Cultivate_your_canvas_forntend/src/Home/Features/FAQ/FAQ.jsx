@@ -46,13 +46,12 @@ const FAQ = () => {
         src={littleGirl}
         alt="little girl"
         className="absolute h-[400px] -right-20 bottom-0 -z-10 max-md:hidden"
-        loading="lazy" // Lazy load image
       />
 
       {Faqdata.map((item, idx) => (
         <div
           key={idx}
-          className={`py-5 px-4 border border-gray-400 rounded-lg w-[80vw] cursor-pointer transition-all duration-500  ${openFAQIndex === idx ? "bg-orange-500" : "text-black"
+          className={`py-5 px-4 border border-gray-400 rounded-lg w-[90%] cursor-pointer transition-all duration-500  ${openFAQIndex === idx ? "bg-orange-500" : "text-black"
             }`}
           onClick={() => handleFAQ(idx)}
         >
