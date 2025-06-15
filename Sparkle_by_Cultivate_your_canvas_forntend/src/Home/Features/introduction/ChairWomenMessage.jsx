@@ -36,38 +36,35 @@ const ChairWomenMessage = () => {
             {/* heading */}
             {/* <AnimatedComponent> */}
             <h2 className="font-bold text-4xl text-gray-800">
-              CEO message
+              Message From CEO
             </h2>
             {/* </AnimatedComponent> */}
             {/* <AnimatedComponent> */}
             <p className="text-gray-700">
-              As a mother of a 6-year-old, I understand the importance of
-              nurturing a child's potential from an early age. My deep love
-              for children and a keen awareness of what our generation missed
-              during our formative years inspired me to create Sparkle. Our
-              academy is designed to be a one-stop destination for children to
-              explore, learn, and grow through various workshops and training
-              sessions.
+              As a mother of a little one, I understand the importance of
+              nurturing a child's potential from an early age. My deep love for
+              children and a keen awareness of what our generation missed during
+              our formative years inspired me to create Sparkle. Our academy is
+              designed to be a one-stop destination for children to explore,
+              learn, and grow through various workshops and training sessions.
               <br />
-              Sparkle is not just a business venture; it's a mission to
-              provide today's children with the opportunities that were once
-              unavailable to us. I believe that learning is a lifelong journey
-              with endless possibilities, and through Sparkle, we aim to
-              empower every child to reach their fullest potential. This
-              initiative is dedicated to parents like myself, who want to see
-              their children thrive in a supportive and enriching environment.
+              Sparkle is not just a business venture; it's a mission to provide
+              today's children with the opportunities that were once unavailable
+              to us. I believe that learning is a lifelong journey with endless
+              possibilities, and through Sparkle, we aim to empower every child
+              to reach their fullest potential. This initiative is dedicated to
+              parents like myself, who want to see their children thrive in a
+              supportive and enriching environment.
               <br />
               Thank you for being a part of this journey with us.
             </p>
             {/* </AnimatedComponent> */}
           </div>
 
-
           {/* img frame */}
           <div className="md:col-span-5 max-lg:order-1 p-2 max-w-[540px]">
             {/* <AnimatedComponent2> */}
             <div className="relative lg:h-full lg:w-full h-[300px] w-[350px] ">
-
               {/* pin */}
               <img
                 src={pin}
